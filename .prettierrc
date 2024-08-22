@@ -1,0 +1,13 @@
+{
+    "singleQuote": true,
+    "semi": true,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "arrowParens": "avoid",
+    "endOfLine": "auto",
+    "bracketSpacing": true,
+    "printWidth": 125,
+    "importOrder": ["^\\u0000", "^react", "^@mui", "^\\w", "^"],
+    "importOrderSeparation": true
+  }
+  
