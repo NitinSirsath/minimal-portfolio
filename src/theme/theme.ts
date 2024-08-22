@@ -49,7 +49,8 @@ export const lightTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Roboto, sans-serif', // Clean and modern font
+    // fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif', // Clean and modern font
+    fontFamily: '"IBM Plex Mono", monospace',
     h1: {
       fontWeight: 700,
       fontSize: '2.5rem',
@@ -132,7 +133,7 @@ export const darkTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Roboto, sans-serif', // Clean and modern font
+    fontFamily: '"IBM Plex Mono", monospace', // Clean and modern font
     h1: {
       fontWeight: 700,
       fontSize: '2.5rem',
