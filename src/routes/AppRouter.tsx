@@ -5,7 +5,7 @@ import AppLayout from '../layout/AppLayout';
 
 const AppRouter = () => {
   return (
-    <Paper sx={{ height: '100vh' }}>
+    <Paper>
       <AppLayout>
         <Routes>
           <Route path="/" index element={<HomePage />} />
