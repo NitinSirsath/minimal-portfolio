@@ -8,7 +8,7 @@ type IProps = {
 const AppLayout = ({ children }: IProps) => {
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
-      <div style={{ width: '30%' }}>
+      <div style={{ width: '42%' }}>
         <div className="my-11">
           <Navbar />
         </div>

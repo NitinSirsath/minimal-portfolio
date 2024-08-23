@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <Typography variant="h3" className={globalStyle.ibmPlexMonoNormal}>
-        NS
+        ns
       </Typography>
       <Stack direction="row" spacing={2}>
         <ListItem className={globalStyle.ibmPlexMonoNormal}>Explore</ListItem>
