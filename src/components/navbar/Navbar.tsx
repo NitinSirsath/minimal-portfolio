@@ -3,7 +3,7 @@ import globalStyle from '../../style/globalStyle.module.css';
 
 const Navbar = () => {
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <Typography variant="h3" className={globalStyle.ibmPlexMonoNormal}>
         ns
       </Typography>

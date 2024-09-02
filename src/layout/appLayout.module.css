@@ -13,6 +13,13 @@
     top: 0; /* Stick header to top of viewport */
     z-index: 1; /* Ensure header is above main content */
   }
+  .footerContainer {
+    padding:  20px 0px;
+    flex: 0; /* Allow header to take up its natural height */
+    position: sticky;
+    bottom: 0; /* Stick header to top of viewport */
+    z-index: 1; /* Ensure header is above main content */
+  }
   
   .mainContent {
     flex: 1;

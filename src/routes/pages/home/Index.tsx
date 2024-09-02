@@ -1,6 +1,7 @@
 import { ArrowForwardRounded } from '@mui/icons-material';
 import { Button, Divider, Typography } from '@mui/material';
 import ProjectSection from './components/ProjectSection';
+import RecentWriting from './components/writing/RecentWriting';
 // import globalStyles from '../../../style/globalStyle.module.css';
 
 const HomePage = () => {
@@ -24,6 +25,9 @@ const HomePage = () => {
       </div>
       <Divider />
       <ProjectSection />
+      <div>
+        <RecentWriting />
+      </div>
     </div>
   );
 };
