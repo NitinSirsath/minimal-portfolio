@@ -3,7 +3,18 @@ import globalStyle from '../../style/globalStyle.module.css';
 
 const Navbar = () => {
   return (
-    <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <div
+      style={{
+        marginTop: '20px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '10px 20px', // Add some padding for better spacing
+        background: 'rgba(255, 255, 255, 0.3)', // Semi-transparent background
+        backdropFilter: 'blur(10px)', // Apply blur effect
+        borderRadius: '8px', // Optional for rounded corners
+      }}
+    >
       <Typography variant="h3" className={globalStyle.ibmPlexMonoNormal}>
         ns
       </Typography>
