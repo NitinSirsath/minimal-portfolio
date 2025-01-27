@@ -12,7 +12,7 @@ const HomePage = () => {
           {' '}
           Hallo, <span className="text-amber-300">I'm Nitin</span>.
         </Typography>
-        <Typography variant="caption">A fullstack-engineer from the Aurangabad based in Pune.</Typography>
+        <Typography variant="caption">A fullstack-engineer from the Aurangabad, MH</Typography>
         <Typography className="py-5" variant="body1">
           I work with leading-edge companies <br />
           to create exceptional products. <br />I most recently worked with MoonPay to help <br />
