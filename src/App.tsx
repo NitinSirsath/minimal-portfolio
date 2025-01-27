@@ -3,6 +3,7 @@ import { darkTheme, lightTheme } from './theme/theme';
 import AppRouter from './routes/AppRouter';
 import useThemeStore from './store/theme/themeStore';
 import { Paper } from '@mui/material';
+import './App.css';
 
 function App() {
   const { darkMode } = useThemeStore();
