@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 interface IProps {
   children: ReactNode;
-  widthPercentage: number;
+  widthPercentage?: number;
 }
 
 const CenterWrapper = ({ children, widthPercentage = 50 }: IProps) => {
@@ -12,7 +12,6 @@ const CenterWrapper = ({ children, widthPercentage = 50 }: IProps) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh',
         width: '100%',
       }}
     >

@@ -9,7 +9,7 @@ type IProps = {
 
 const AppLayout = ({ children }: IProps) => {
   return (
-    <div className={styles.appLayout} style={{ display: 'flex', justifyContent: 'center' }}>
+    <div className={styles.appLayout}>
       <div>
         <div className={styles.headerContainer}>
           <Navbar />
