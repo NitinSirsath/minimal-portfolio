@@ -1,4 +1,5 @@
 import { ListItem, Stack, Typography } from '@mui/material';
+import { Link } from 'react-router-dom'; // Import Link if using react-router
 import globalStyle from '../../style/globalStyle.module.css';
 
 const Navbar = () => {
@@ -10,18 +11,56 @@ const Navbar = () => {
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: '10px 20px', // Add some padding for better spacing
-        background: 'rgba(255, 255, 255, 0.3)', // Semi-transparent background
+        background: 'rgba(149, 146, 146, 0.118)', // Semi-transparent background
         backdropFilter: 'blur(10px)', // Apply blur effect
         borderRadius: '8px', // Optional for rounded corners
       }}
     >
       <Typography variant="h3" className={globalStyle.ibmPlexMonoNormal}>
-        ns
+        <Link
+          to="/"
+          style={{
+            textDecoration: 'none',
+            color: 'inherit',
+          }}
+        >
+          ns
+        </Link>
       </Typography>
       <Stack direction="row" spacing={2}>
-        <ListItem className={globalStyle.ibmPlexMonoNormal}>Explore</ListItem>
-        <ListItem className={globalStyle.ibmPlexMonoNormal}>Contact</ListItem>
-        <ListItem className={globalStyle.ibmPlexMonoNormal}>About</ListItem>
+        <ListItem disablePadding className={globalStyle.ibmPlexMonoNormal}>
+          <Link
+            to="/explore"
+            style={{
+              textDecoration: 'none',
+              color: 'inherit',
+            }}
+          >
+            Explore
+          </Link>
+        </ListItem>
+        <ListItem disablePadding className={globalStyle.ibmPlexMonoNormal}>
+          <Link
+            to="/contact"
+            style={{
+              textDecoration: 'none',
+              color: 'inherit',
+            }}
+          >
+            Contact
+          </Link>
+        </ListItem>
+        <ListItem disablePadding className={globalStyle.ibmPlexMonoNormal}>
+          <Link
+            to="/about"
+            style={{
+              textDecoration: 'none',
+              color: 'inherit',
+            }}
+          >
+            About
+          </Link>
+        </ListItem>
       </Stack>
     </div>
   );
