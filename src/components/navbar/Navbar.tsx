@@ -1,4 +1,4 @@
-import { IconButton, ListItem, Stack, Tooltip, Typography } from '@mui/material';
+import { IconButton, ListItem, Stack, Tooltip, Typography, useTheme } from '@mui/material';
 import { Link } from 'react-router-dom'; // Import Link if using react-router
 import { motion } from 'framer-motion'; // Import Framer Motion
 import globalStyle from '../../style/globalStyle.module.css';
@@ -8,7 +8,9 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import useThemeStore from '../../store/theme/themeStore';
 
 const Navbar = () => {
+  const theme = useTheme(); // Access MUI theme
   const { darkMode, toggleDarkMode } = useThemeStore();
+
   // Animation variants
   const navbarVariants = {
     hidden: { opacity: 0, y: -50 },
@@ -26,6 +28,7 @@ const Navbar = () => {
       transition: { duration: 0.3 },
     },
   };
+
   const mainLogoVariant = {
     hover: {
       scale: 1.3,
@@ -49,10 +52,12 @@ const Navbar = () => {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          padding: '10px 20px', // Add some padding for better spacing
-          background: 'rgba(149, 146, 146, 0.118)', // Semi-transparent background
+          padding: '10px 20px',
+          background: theme.palette.mode === 'dark' ? 'rgba(33, 33, 33, 0.3)' : 'rgba(255, 255, 255, 0.3)', // Adjusted for theme
+          color: theme.palette.text.primary,
           backdropFilter: 'blur(10px)', // Apply blur effect
-          borderRadius: '8px', // Optional for rounded corners
+          borderRadius: '8px',
+          border: `1px solid ${theme.palette.divider}`, // Adjust border color relative to theme
         }}
       >
         <Typography variant="h3" className={globalStyle.ibmPlexMonoNormal}>

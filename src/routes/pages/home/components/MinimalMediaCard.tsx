@@ -83,10 +83,10 @@ export default function MinimalMediaCard({ element }: IProps) {
               borderColor: 'primary.main',
               borderRadius: 2,
               transition: 'background-color 0.3s ease, color 0.3s ease',
-              '&:hover': {
-                backgroundColor: 'primary.main',
-                color: '#ffffff',
-              },
+              // '&:hover': {
+              //   backgroundColor: 'primary.main',
+              //   color: '#ffffff',
+              // },
             }}
           >
             Share
@@ -102,10 +102,10 @@ export default function MinimalMediaCard({ element }: IProps) {
               borderColor: 'primary.main',
               borderRadius: 2,
               transition: 'background-color 0.3s ease, color 0.3s ease',
-              '&:hover': {
-                backgroundColor: 'primary.main',
-                color: '#ffffff',
-              },
+              // '&:hover': {
+              //   backgroundColor: 'primary.main',
+              //   color: '#ffffff',
+              // },
             }}
           >
             Learn More
