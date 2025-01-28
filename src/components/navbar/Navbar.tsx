@@ -1,12 +1,34 @@
 import { ListItem, Stack, Typography } from '@mui/material';
 import { Link } from 'react-router-dom'; // Import Link if using react-router
+import { motion } from 'framer-motion'; // Import Framer Motion
 import globalStyle from '../../style/globalStyle.module.css';
 import CenterWrapper from '../wrappers/CenterWrapper';
 
 const Navbar = () => {
+  // Animation variants
+  const navbarVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: 'easeOut' },
+    },
+  };
+
+  const linkVariants = {
+    hover: {
+      scale: 1.1,
+      color: '#fbbf24', // Change color on hover (Amber-400)
+      transition: { duration: 0.3 },
+    },
+  };
+
   return (
     <CenterWrapper>
-      <div
+      <motion.div
+        variants={navbarVariants}
+        initial="hidden"
+        animate="visible"
         style={{
           marginTop: '20px',
           display: 'flex',
@@ -30,41 +52,23 @@ const Navbar = () => {
           </Link>
         </Typography>
         <Stack direction="row" spacing={2}>
-          <ListItem disablePadding className={globalStyle.ibmPlexMonoNormal}>
-            <Link
-              to="/explore"
-              style={{
-                textDecoration: 'none',
-                color: 'inherit',
-              }}
-            >
-              Explore
-            </Link>
-          </ListItem>
-          <ListItem disablePadding className={globalStyle.ibmPlexMonoNormal}>
-            <Link
-              to="/contact"
-              style={{
-                textDecoration: 'none',
-                color: 'inherit',
-              }}
-            >
-              Contact
-            </Link>
-          </ListItem>
-          <ListItem disablePadding className={globalStyle.ibmPlexMonoNormal}>
-            <Link
-              to="/about"
-              style={{
-                textDecoration: 'none',
-                color: 'inherit',
-              }}
-            >
-              About
-            </Link>
-          </ListItem>
+          {['Explore', 'Contact', 'About'].map(text => (
+            <ListItem key={text} disablePadding className={globalStyle.ibmPlexMonoNormal}>
+              <motion.div variants={linkVariants} whileHover="hover">
+                <Link
+                  to={`/${text.toLowerCase()}`}
+                  style={{
+                    textDecoration: 'none',
+                    color: 'inherit',
+                  }}
+                >
+                  {text}
+                </Link>
+              </motion.div>
+            </ListItem>
+          ))}
         </Stack>
-      </div>
+      </motion.div>
     </CenterWrapper>
   );
 };
