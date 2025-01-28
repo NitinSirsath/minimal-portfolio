@@ -3,6 +3,7 @@ import BlogCard from '../../../components/cards/BlogCard';
 import CenterWrapper from '../../../components/wrappers/CenterWrapper';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { blogData, BlogDataType } from '../../../components/data/blogData';
 
 const BlogPage = () => {
   const ref = useRef(null); // Create a ref to observe visibility
@@ -37,18 +38,11 @@ const BlogPage = () => {
         </CenterWrapper>
         <CenterWrapper>
           <motion.div variants={containerVariants}>
-            <motion.div variants={itemVariants}>
-              <BlogCard />
-            </motion.div>
-            <motion.div variants={itemVariants}>
-              <BlogCard />
-            </motion.div>
-            <motion.div variants={itemVariants}>
-              <BlogCard />
-            </motion.div>
-            <motion.div variants={itemVariants}>
-              <BlogCard />
-            </motion.div>
+            {blogData.map((element: BlogDataType) => (
+              <motion.div variants={itemVariants}>
+                <BlogCard element={element} />
+              </motion.div>
+            ))}
           </motion.div>
         </CenterWrapper>
       </motion.div>

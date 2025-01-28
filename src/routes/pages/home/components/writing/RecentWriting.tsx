@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import CenterWrapper from '../../../../../components/wrappers/CenterWrapper';
 import { motion, useInView } from 'framer-motion'; // Import Framer Motion and useInView
 import { useRef } from 'react';
+import { blogData, BlogDataType } from '../../../../../components/data/blogData';
 
 const RecentWriting = () => {
   const navigate = useNavigate();
@@ -51,27 +52,14 @@ const RecentWriting = () => {
         </CenterWrapper>
         <CenterWrapper>
           <motion.div variants={containerVariants}>
-            <motion.div variants={itemVariants}>
-              <BlogCard />
-            </motion.div>
-            <motion.div variants={itemVariants}>
-              <BlogCard />
-            </motion.div>
-            <motion.div variants={itemVariants}>
-              <BlogCard />
-            </motion.div>
+            {blogData.slice(0, 2).map((element: BlogDataType) => (
+              <motion.div variants={itemVariants}>
+                <BlogCard element={element} />
+              </motion.div>
+            ))}
           </motion.div>
           <motion.div variants={itemVariants}>
-            <Button
-              onClick={handleNavigation}
-              sx={{ my: 1 }}
-              endIcon={<ArrowForwardRounded />}
-              variant="contained"
-              // whileHover={{
-              //   scale: 1.1, // Slight scaling on hover
-              //   transition: { duration: 0.3 },
-              // }}
-            >
+            <Button onClick={handleNavigation} sx={{ my: 1 }} endIcon={<ArrowForwardRounded />} variant="contained">
               View more posts
             </Button>
           </motion.div>
