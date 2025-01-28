@@ -93,13 +93,13 @@ const Navbar = () => {
             </ListItem>
           ))}
           {darkMode ? (
-            <Tooltip enterDelay={500} leaveDelay={300} title="Turn On light mode">
+            <Tooltip enterDelay={500} leaveDelay={300} title="Turn on light mode">
               <IconButton onClick={handleThemeMode} color="inherit">
                 <DarkModeIcon />
               </IconButton>
             </Tooltip>
           ) : (
-            <Tooltip enterDelay={500} leaveDelay={300} title="Turn On dark mode">
+            <Tooltip enterDelay={500} leaveDelay={300} title="Turn on dark mode">
               <IconButton onClick={handleThemeMode} color="inherit">
                 <LightModeIcon />
               </IconButton>
