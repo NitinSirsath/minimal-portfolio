@@ -68,7 +68,7 @@ const BlogCard = ({ element }: IProps) => {
               //   },
               // }}
             >
-              <ArrowForward color="primary" />
+              <ArrowForward color="disabled" />
             </IconButton>
           </Box>
         </Box>
