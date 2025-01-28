@@ -18,7 +18,6 @@ const CenterWrapper = ({ children, widthPercentage = 50 }: IProps) => {
       <div
         style={{
           width: `${widthPercentage}%`,
-          textAlign: 'center',
         }}
       >
         {children}

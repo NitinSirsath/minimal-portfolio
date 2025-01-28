@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 
 const BlogCard = () => {
   return (
-    <Box sx={{ maxWidth: '800px', margin: 'auto', my: 2 }}>
+    <Box sx={{ my: 2 }}>
       <Box sx={{ padding: '15px 0', borderBottom: '1px solid', borderColor: 'divider' }}>
         <Typography variant="h6" sx={{ fontWeight: 'bold', color: 'text.primary' }}>
           Getting Started with React: A Beginner’s Practice Session
