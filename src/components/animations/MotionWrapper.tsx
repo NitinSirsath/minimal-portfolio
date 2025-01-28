@@ -20,11 +20,12 @@ const MotionWrapper = ({
   initial = 'hidden',
   animate = 'visible',
   once = true,
-  margin = '0px',
+  //   margin = '0px',
   className = '',
 }: MotionWrapperProps) => {
   const ref = useRef<HTMLDivElement>(null); // Ref to the DOM element
-  const isInView = useInView(ref, { once, margin }); // Determine if the element is in view
+  const isInView = useInView(ref, { once }); // Determine if the element is in view
+  //   const isInView = useInView(ref, { once, margin }); // Determine if the element is in view
 
   return (
     <motion.div ref={ref} initial={initial} animate={isInView ? animate : initial} variants={variants} className={className}>
