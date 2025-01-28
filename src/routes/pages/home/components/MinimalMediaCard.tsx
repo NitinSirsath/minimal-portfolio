@@ -34,7 +34,7 @@ export default function MinimalMediaCard({ element, key }: IProps) {
           height: 140,
           backgroundSize: 'contain',
           margin: '10px',
-          transition: 'filter 0.3s ease', // Smooth transition for filter
+          transition: 'filter 0.8s ease', // Smooth transition for filter
           '&:hover': {
             filter: 'grayscale(0%)', // Remove grayscale on hover
           },
@@ -51,7 +51,7 @@ export default function MinimalMediaCard({ element, key }: IProps) {
           sx={{
             fontWeight: 600,
             color: 'text.primary',
-            transition: 'color 0.3s ease', // Smooth transition for text color
+            transition: 'color 0.8s ease', // Smooth transition for text color
           }}
         >
           {element.projectName}
@@ -61,7 +61,7 @@ export default function MinimalMediaCard({ element, key }: IProps) {
           color="text.secondary"
           sx={{
             lineHeight: 1.75,
-            transition: 'color 0.3s ease', // Smooth transition for text color
+            transition: 'color 0.8s ease', // Smooth transition for text color
           }}
         >
           {element.desc}

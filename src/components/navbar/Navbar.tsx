@@ -1,10 +1,14 @@
-import { ListItem, Stack, Typography } from '@mui/material';
+import { IconButton, ListItem, Stack, Tooltip, Typography } from '@mui/material';
 import { Link } from 'react-router-dom'; // Import Link if using react-router
 import { motion } from 'framer-motion'; // Import Framer Motion
 import globalStyle from '../../style/globalStyle.module.css';
 import CenterWrapper from '../wrappers/CenterWrapper';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import useThemeStore from '../../store/theme/themeStore';
 
 const Navbar = () => {
+  const { darkMode, toggleDarkMode } = useThemeStore();
   // Animation variants
   const navbarVariants = {
     hidden: { opacity: 0, y: -50 },
@@ -21,6 +25,10 @@ const Navbar = () => {
       color: '#fbbf24', // Change color on hover (Amber-400)
       transition: { duration: 0.3 },
     },
+  };
+
+  const handleThemeMode = () => {
+    toggleDarkMode();
   };
 
   return (
@@ -67,6 +75,19 @@ const Navbar = () => {
               </motion.div>
             </ListItem>
           ))}
+          {darkMode ? (
+            <Tooltip enterDelay={1000} leaveDelay={500} title="Turn On light mode">
+              <IconButton onClick={handleThemeMode}>
+                <DarkModeIcon />
+              </IconButton>
+            </Tooltip>
+          ) : (
+            <Tooltip enterDelay={1000} leaveDelay={500} title="Turn On dark mode">
+              <IconButton onClick={handleThemeMode}>
+                <LightModeIcon />
+              </IconButton>
+            </Tooltip>
+          )}
         </Stack>
       </motion.div>
     </CenterWrapper>

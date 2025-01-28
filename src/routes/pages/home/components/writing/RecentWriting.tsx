@@ -49,31 +49,33 @@ const RecentWriting = () => {
             </Typography>
           </motion.div>
         </CenterWrapper>
-        <motion.div variants={containerVariants}>
-          <motion.div variants={itemVariants}>
-            <BlogCard />
+        <CenterWrapper>
+          <motion.div variants={containerVariants}>
+            <motion.div variants={itemVariants}>
+              <BlogCard />
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <BlogCard />
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <BlogCard />
+            </motion.div>
           </motion.div>
           <motion.div variants={itemVariants}>
-            <BlogCard />
+            <Button
+              onClick={handleNavigation}
+              sx={{ my: 1 }}
+              endIcon={<ArrowForwardRounded />}
+              variant="contained"
+              // whileHover={{
+              //   scale: 1.1, // Slight scaling on hover
+              //   transition: { duration: 0.3 },
+              // }}
+            >
+              View more posts
+            </Button>
           </motion.div>
-          <motion.div variants={itemVariants}>
-            <BlogCard />
-          </motion.div>
-        </motion.div>
-        <motion.div variants={itemVariants}>
-          <Button
-            onClick={handleNavigation}
-            sx={{ my: 1 }}
-            endIcon={<ArrowForwardRounded />}
-            variant="contained"
-            // whileHover={{
-            //   scale: 1.1, // Slight scaling on hover
-            //   transition: { duration: 0.3 },
-            // }}
-          >
-            View more posts
-          </Button>
-        </motion.div>
+        </CenterWrapper>
       </motion.div>
     </div>
   );
