@@ -26,6 +26,13 @@ const Navbar = () => {
       transition: { duration: 0.3 },
     },
   };
+  const mainLogoVariant = {
+    hover: {
+      scale: 1.3,
+      color: '#d70b00', // Change color on hover (Amber-400)
+      transition: { duration: 0.4 },
+    },
+  };
 
   const handleThemeMode = () => {
     toggleDarkMode();
@@ -49,15 +56,17 @@ const Navbar = () => {
         }}
       >
         <Typography variant="h3" className={globalStyle.ibmPlexMonoNormal}>
-          <Link
-            to="/"
-            style={{
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-          >
-            ns
-          </Link>
+          <motion.div variants={mainLogoVariant} whileHover="hover">
+            <Link
+              to="/"
+              style={{
+                textDecoration: 'none',
+                color: 'inherit',
+              }}
+            >
+              ns
+            </Link>
+          </motion.div>
         </Typography>
         <Stack direction="row" spacing={2}>
           {['Explore', 'Contact', 'About'].map(text => (
