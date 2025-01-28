@@ -1,6 +1,6 @@
 import { IconButton, ListItem, Stack, Tooltip, Typography, useTheme } from '@mui/material';
-import { Link } from 'react-router-dom'; // Import Link if using react-router
-import { motion } from 'framer-motion'; // Import Framer Motion
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import globalStyle from '../../style/globalStyle.module.css';
 import CenterWrapper from '../wrappers/CenterWrapper';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
@@ -24,15 +24,15 @@ const Navbar = () => {
   const linkVariants = {
     hover: {
       scale: 1.1,
-      color: '#fbbf24', // Change color on hover (Amber-400)
+      color: theme.palette.primary.main, // Use primary color for hover
       transition: { duration: 0.3 },
     },
   };
 
   const mainLogoVariant = {
     hover: {
-      scale: 1.3,
-      color: '#d70b00', // Change color on hover (Amber-400)
+      scale: 1.2,
+      color: theme.palette.secondary.main, // Use secondary color for hover
       transition: { duration: 0.4 },
     },
   };
@@ -53,11 +53,14 @@ const Navbar = () => {
           justifyContent: 'space-between',
           alignItems: 'center',
           padding: '10px 20px',
-          background: theme.palette.mode === 'dark' ? 'rgba(33, 33, 33, 0.3)' : 'rgba(255, 255, 255, 0.3)', // Adjusted for theme
-          color: theme.palette.text.primary,
-          backdropFilter: 'blur(10px)', // Apply blur effect
+          background:
+            theme.palette.mode === 'dark'
+              ? 'rgba(33, 33, 33, 0.9)' // Dark mode background
+              : 'rgba(245, 245, 245, 0.8)', // Light mode background
+          color: theme.palette.text.primary, // Use text color from the theme
+          backdropFilter: 'blur(10px)',
           borderRadius: '8px',
-          border: `1px solid ${theme.palette.divider}`, // Adjust border color relative to theme
+          border: `1px solid ${theme.palette.divider}`, // Divider color from theme
         }}
       >
         <Typography variant="h3" className={globalStyle.ibmPlexMonoNormal}>
@@ -66,7 +69,7 @@ const Navbar = () => {
               to="/"
               style={{
                 textDecoration: 'none',
-                color: 'inherit',
+                color: theme.palette.text.primary, // Dynamically adjust text color
               }}
             >
               ns
@@ -81,7 +84,7 @@ const Navbar = () => {
                   to={`/${text.toLowerCase()}`}
                   style={{
                     textDecoration: 'none',
-                    color: 'inherit',
+                    color: theme.palette.text.primary, // Dynamically adjust link color
                   }}
                 >
                   {text}
@@ -90,14 +93,14 @@ const Navbar = () => {
             </ListItem>
           ))}
           {darkMode ? (
-            <Tooltip enterDelay={1000} leaveDelay={500} title="Turn On light mode">
-              <IconButton onClick={handleThemeMode}>
+            <Tooltip enterDelay={500} leaveDelay={300} title="Turn On light mode">
+              <IconButton onClick={handleThemeMode} color="inherit">
                 <DarkModeIcon />
               </IconButton>
             </Tooltip>
           ) : (
-            <Tooltip enterDelay={1000} leaveDelay={500} title="Turn On dark mode">
-              <IconButton onClick={handleThemeMode}>
+            <Tooltip enterDelay={500} leaveDelay={300} title="Turn On dark mode">
+              <IconButton onClick={handleThemeMode} color="inherit">
                 <LightModeIcon />
               </IconButton>
             </Tooltip>
