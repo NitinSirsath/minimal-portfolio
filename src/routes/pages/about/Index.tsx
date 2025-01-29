@@ -20,7 +20,13 @@ const AboutPage = () => {
       {/* Profile Section */}
       <Box textAlign="left" sx={{ mb: 4 }}>
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <Avatar src={personalInfo.profileImage} sx={{ width: 200, height: 200, mb: 2 }} />
+          <motion.div
+            whileHover={{ scale: 1.1, rotate: 10 }}
+            whileTap={{ scale: 0.9, rotate: -10 }}
+            transition={{ type: 'spring', stiffness: 200 }}
+          >
+            <Avatar src={personalInfo.profileImage} sx={{ width: 200, height: 200, mb: 2, border: '4px solid #FCD44C' }} />
+          </motion.div>
           <Typography variant="h3" sx={{ fontWeight: 'bold', color: '#FCD44C' }}>
             {personalInfo.name}
           </Typography>
