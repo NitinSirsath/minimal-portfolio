@@ -1,16 +1,17 @@
-import { Box, Typography, Divider, Avatar, Chip } from '@mui/material';
-import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot } from '@mui/lab';
+import { Box, Typography, Divider, Avatar, Chip, Stack, Tooltip, IconButton } from '@mui/material';
 import { motion } from 'framer-motion';
 import CenterWrapper from '../../../components/wrappers/CenterWrapper';
+import { personalInfo, skills, tools, languages, collegeLife, photography } from '../../../components/data/about';
 import {
-  experience,
-  personalInfo,
-  skills,
-  tools,
-  languages,
-  collegeLife,
-  photography,
-} from '../../../components/data/about';
+  Call as CallIcon,
+  PinDrop as PinDropIcon,
+  ContactMail as ContactMailIcon,
+  PermIdentity as PermIdentityIcon,
+  YouTube as YouTubeIcon,
+  LinkedIn as LinkedInIcon,
+  Instagram as InstagramIcon,
+  X as XIcon,
+} from '@mui/icons-material';
 
 const AboutPage = () => {
   return (
@@ -18,7 +19,7 @@ const AboutPage = () => {
       {/* Profile Section */}
       <Box textAlign="left" sx={{ mb: 4 }}>
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <Avatar src={personalInfo.profileImage} sx={{ width: 120, height: 120, margin: '0 auto', mb: 2 }} />
+          <Avatar src={personalInfo.profileImage} sx={{ width: 200, height: 200, mb: 2 }} />
           <Typography variant="h3" sx={{ fontWeight: 'bold', color: '#FCD44C' }}>
             {personalInfo.name}
           </Typography>
@@ -28,77 +29,117 @@ const AboutPage = () => {
           <Typography variant="body2" color="textSecondary">
             {personalInfo.bio}
           </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-            📍 {personalInfo.location}
-          </Typography>
-          <Typography variant="body2">
-            📧 <a href={`mailto:${personalInfo.contact.email}`}>{personalInfo.contact.email}</a>
-          </Typography>
-          <Typography variant="body2">
-            📞 <a href={`tel:${personalInfo.contact.phone}`}>{personalInfo.contact.phone}</a>
-          </Typography>
-          <Typography variant="body2">
-            🌐 <a href={personalInfo.contact.website}>{personalInfo.contact.website}</a>
-          </Typography>
+
+          {/* Contact Information with Proper Icon Alignment */}
+          <Stack spacing={1} sx={{ mt: 2 }}>
+            <Stack direction="row" alignItems="center" spacing={1}>
+              {/* <Tooltip title="Location" arrow>
+                <PinDropIcon fontSize="small" />
+              </Tooltip> */}
+              <Typography variant="body2">{personalInfo.location}</Typography>
+            </Stack>
+
+            <Stack direction="row" alignItems="center" spacing={1}>
+              {/* <Tooltip title="Email" arrow>
+                <ContactMailIcon fontSize="small" />
+              </Tooltip> */}
+              <Typography variant="body2">
+                <a href={`mailto:${personalInfo.contact.email}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                  {personalInfo.contact.email}
+                </a>
+              </Typography>
+            </Stack>
+
+            <Stack direction="row" alignItems="center" spacing={1}>
+              {/* <Tooltip title="Phone" arrow>
+                <CallIcon fontSize="small" />
+              </Tooltip> */}
+              <Typography variant="body2">
+                <a href={`tel:${personalInfo.contact.phone}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                  {personalInfo.contact.phone}
+                </a>
+              </Typography>
+            </Stack>
+
+            <Stack direction="row" alignItems="center" spacing={1}>
+              {/* <Tooltip title="Portfolio Website" arrow>
+                <PermIdentityIcon fontSize="small" />
+              </Tooltip> */}
+              <Typography variant="body2">
+                <a
+                  href={personalInfo.contact.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+                >
+                  {personalInfo.contact.website}
+                </a>
+              </Typography>
+            </Stack>
+          </Stack>
+
+          {/* Social Links */}
+          <Stack direction="row" spacing={2} sx={{ mt: 2 }}>
+            <Tooltip title="LinkedIn" arrow>
+              <IconButton component="a" href={personalInfo.socials.linkedin} target="_blank" rel="noopener noreferrer">
+                <LinkedInIcon color="disabled" />
+              </IconButton>
+            </Tooltip>
+
+            <Tooltip title="X (Twitter)" arrow>
+              <IconButton component="a" href={personalInfo.socials.x} target="_blank" rel="noopener noreferrer">
+                <XIcon color="disabled" />
+              </IconButton>
+            </Tooltip>
+
+            <Tooltip title="Instagram" arrow>
+              <IconButton component="a" href={personalInfo.socials.instagram} target="_blank" rel="noopener noreferrer">
+                <InstagramIcon color="disabled" />
+              </IconButton>
+            </Tooltip>
+
+            <Tooltip title="YouTube" arrow>
+              <IconButton component="a" href={personalInfo.socials.youtube} target="_blank" rel="noopener noreferrer">
+                <YouTubeIcon color="disabled" />
+              </IconButton>
+            </Tooltip>
+          </Stack>
         </motion.div>
       </Box>
+
       <Divider sx={{ my: 4 }} />
 
       {/* College Life Section */}
       <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
         <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
-          College Life
+          College Life 🎓
         </Typography>
         <Box>
-          <Typography variant="body1">{collegeLife.description}</Typography>
+          {Object.values(collegeLife).map((paragraph, index) => (
+            <Typography key={index} variant="body1" sx={{ mb: 2 }}>
+              {paragraph}
+            </Typography>
+          ))}
         </Box>
       </motion.div>
 
       <Divider sx={{ my: 4 }} />
+
+      {/* Photography Passion Section */}
       <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }}>
         <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
           Photography Passion 📸
         </Typography>
         <Box>
-          <Typography variant="body1">{photography.description}</Typography>
+          {Object.values(photography).map((paragraph, index) => (
+            <Typography key={index} variant="body1" sx={{ mb: 2 }}>
+              {paragraph}
+            </Typography>
+          ))}
         </Box>
       </motion.div>
 
       <Divider sx={{ my: 4 }} />
-
-      {/* Work Experience - Timeline */}
-      <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
-        <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
-          Work Experience
-        </Typography>
-        <Timeline position="alternate">
-          {experience.map((exp, index) => (
-            <TimelineItem key={index}>
-              <TimelineSeparator>
-                <TimelineDot color="primary" />
-                {index !== experience.length - 1 && <TimelineConnector />}
-              </TimelineSeparator>
-              <TimelineContent>
-                <Box sx={{ padding: 2, borderRadius: 2 }}>
-                  <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-                    {exp.company}
-                  </Typography>
-                  <Typography variant="subtitle1" color="text.secondary">
-                    {exp.role} | {exp.period}
-                  </Typography>
-                  <Typography variant="body2" sx={{ mt: 1 }}>
-                    {exp.description}
-                  </Typography>
-                </Box>
-              </TimelineContent>
-            </TimelineItem>
-          ))}
-        </Timeline>
-      </motion.div>
-
-      <Divider sx={{ my: 4 }} />
-
-      {/* Photography Section */}
 
       {/* Skills Section */}
       <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
