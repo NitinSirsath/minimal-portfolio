@@ -47,8 +47,11 @@ const HomePage = () => {
         </div>
       </CenterWrapper>
       <Divider />
-      <ProjectSection />
-      <div>
+      <div className="mt-4">
+        <ProjectSection />
+      </div>
+      <Divider />
+      <div className="mt-4">
         <RecentWriting />
       </div>
     </div>

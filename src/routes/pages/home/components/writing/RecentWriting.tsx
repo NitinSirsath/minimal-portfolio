@@ -40,7 +40,7 @@ const RecentWriting = () => {
         animate={isInView ? 'visible' : 'hidden'} // Trigger animation based on visibility
         variants={containerVariants}
       >
-        <CenterWrapper widthPercentage={70}>
+        <CenterWrapper widthPercentage={50}>
           <motion.div variants={itemVariants}>
             <Typography variant="h3">Recent Writings</Typography>
           </motion.div>
