@@ -32,10 +32,10 @@ export const experience: Experience[] = [
   },
   {
     company: 'Antstack Inc',
-    role: 'Frontend Developer',
+    role: 'Frontend Developer Intern',
     period: 'Aug 2022 – Dec 2022',
     description:
-      'Worked on StackW3, developed custom templates, and created an advanced Template Customizer for enterprise clients.',
+      'Worked on the Stackw3 project, creating custom templates (Astro-Strapi, React Query, Next Hover) and building a user-friendly interface for seamless template generation and cloning to GitHub. Utilized React.js with TypeScript, MUI, Styled Components, and Framer Motion for dynamic UI. Deployed on AWS for scalability and reliability.',
   },
 ];
 
