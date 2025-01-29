@@ -10,11 +10,21 @@ import {
 } from '@mui/icons-material';
 import gif1 from '../../../assets/arya.webp';
 import gif2 from '../../../assets/class.webp';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const AboutPage = () => {
   const [gif1Loaded, setGif1Loaded] = useState(false);
   const [gif2Loaded, setGif2Loaded] = useState(false);
+
+  useEffect(() => {
+    const timeout1 = setTimeout(() => setGif1Loaded(true), 5000); // 5s timeout in case of loading failure
+    const timeout2 = setTimeout(() => setGif2Loaded(true), 5000);
+
+    return () => {
+      clearTimeout(timeout1);
+      clearTimeout(timeout2);
+    };
+  }, []);
   return (
     <CenterWrapper>
       {/* Profile Section */}
@@ -122,6 +132,7 @@ const AboutPage = () => {
           College Life 🎓
         </Typography>
         <Stack direction="row" spacing={2} sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
+          {/* GIF 1 */}
           <Paper
             elevation={3}
             sx={{
@@ -132,6 +143,7 @@ const AboutPage = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              backgroundColor: '#F4F4F4',
             }}
           >
             {!gif1Loaded && <CircularProgress />}
@@ -139,11 +151,18 @@ const AboutPage = () => {
               src={gif1}
               alt="College Memories 1"
               loading="lazy"
-              style={{ display: gif1Loaded ? 'block' : 'none', width: '100%', height: '100%', objectFit: 'cover' }}
+              style={{
+                display: gif1Loaded ? 'block' : 'none',
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }}
               onLoad={() => setGif1Loaded(true)}
+              onError={() => setGif1Loaded(true)} // Force load in case of error
             />
           </Paper>
 
+          {/* GIF 2 */}
           <Paper
             elevation={3}
             sx={{
@@ -154,6 +173,7 @@ const AboutPage = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              backgroundColor: '#F4F4F4',
             }}
           >
             {!gif2Loaded && <CircularProgress />}
@@ -161,8 +181,14 @@ const AboutPage = () => {
               src={gif2}
               alt="College Memories 2"
               loading="lazy"
-              style={{ display: gif2Loaded ? 'block' : 'none', width: '100%', height: '100%', objectFit: 'cover' }}
+              style={{
+                display: gif2Loaded ? 'block' : 'none',
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }}
               onLoad={() => setGif2Loaded(true)}
+              onError={() => setGif2Loaded(true)}
             />
           </Paper>
         </Stack>
