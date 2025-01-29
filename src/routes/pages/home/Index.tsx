@@ -33,10 +33,13 @@ const HomePage = () => {
           </motion.div>
           <motion.div initial="hidden" animate="visible" variants={textVariants} custom={2}>
             <Typography className="py-5" variant="body1">
-              I work with leading-edge companies <br />
-              to create exceptional products. <br />I most recently worked with MoonPay to help <br />
-              make web3 accessible. Before that, I built personal and <br />
-              business banking products for millions of customers at Monzo.
+              I build sleek, scalable frontends and love solving tech puzzles—whether it’s state management, performance
+              tuning, or making sure everything just works beautifully. I enjoy the technical side of UI, ensuring every
+              click, scroll, and transition feels effortless.
+              <br />
+              When I’m not coding, you’ll find me grinding FIFA like it’s the Champions League final, capturing moments
+              through my lens, or escaping to the mountains for some fresh air and chai. Tech, football, photography, and
+              adventure—that's me in a nutshell. 🚀
             </Typography>
           </motion.div>
           <motion.div initial="hidden" animate="visible" variants={textVariants} custom={3}>
