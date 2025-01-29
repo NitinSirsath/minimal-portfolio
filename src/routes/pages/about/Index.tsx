@@ -1,7 +1,7 @@
 import { Box, Typography, Divider, Avatar, Chip, Stack, Tooltip, IconButton, CircularProgress, Paper } from '@mui/material';
 import { motion } from 'framer-motion';
 import CenterWrapper from '../../../components/wrappers/CenterWrapper';
-import { personalInfo, skills, tools, languages, collegeLife, photography } from '../../../components/data/about';
+import { personalInfo, languages, collegeLife, photography } from '../../../components/data/about';
 import {
   YouTube as YouTubeIcon,
   LinkedIn as LinkedInIcon,
@@ -220,14 +220,14 @@ const AboutPage = () => {
       <Divider sx={{ my: 4 }} />
 
       {/* Skills Section */}
-      <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
+      {/* <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
         Skills & Tools
       </Typography>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
         {[...skills.skills, ...tools.tools].map((skill, index) => (
           <Chip key={index} label={skill} variant="outlined" />
         ))}
-      </Box>
+      </Box> */}
 
       <Divider sx={{ my: 4 }} />
 
