@@ -27,10 +27,10 @@ const GamingEsports = () => {
           </Typography>
 
           <Typography
-            variant="h5"
+            variant="h6"
+            color="textSecondary"
             sx={{
               fontWeight: 'bold',
-              color: theme.palette.secondary.main,
               mt: 3,
               '&:hover': { color: theme.palette.primary.main, transition: 'color 0.3s ease' },
             }}
@@ -51,10 +51,10 @@ const GamingEsports = () => {
           </Typography>
 
           <Typography
-            variant="h5"
+            variant="h6"
+            color="textSecondary"
             sx={{
               fontWeight: 'bold',
-              color: theme.palette.secondary.main,
               mt: 3,
               '&:hover': { color: theme.palette.primary.main, transition: 'color 0.3s ease' },
             }}

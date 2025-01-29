@@ -26,9 +26,10 @@ const SideHustlesProjects = () => {
           </Typography>
 
           <Typography
-            variant="h5"
+            variant="h6"
+            color="textSecondary"
             sx={{
-              color: theme.palette.secondary.main,
+              fontWeight: 'bold',
               mt: 3,
               '&:hover': { color: theme.palette.primary.main, transition: 'color 0.3s ease' },
             }}
@@ -50,10 +51,10 @@ const SideHustlesProjects = () => {
           </Typography>
 
           <Typography
-            variant="h5"
+            variant="h6"
+            color="textSecondary"
             sx={{
               fontWeight: 'bold',
-              color: theme.palette.secondary.main,
               mt: 3,
               '&:hover': { color: theme.palette.primary.main, transition: 'color 0.3s ease' },
             }}
