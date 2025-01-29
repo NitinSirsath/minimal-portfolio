@@ -13,18 +13,18 @@ export interface PersonalInfo {
   location: string;
 }
 
-export interface Experience {
-  company: string;
-  role: string;
-  period: string;
-  description: string;
-}
+// export interface Experience {
+//   company: string;
+//   role: string;
+//   period: string;
+//   description: string;
+// }
 
-export interface Project {
-  name: string;
-  period: string;
-  description: string;
-}
+// export interface Project {
+//   name: string;
+//   period: string;
+//   description: string;
+// }
 
 export interface Education {
   institution: string;
@@ -67,22 +67,22 @@ export const personalInfo = {
   },
 };
 
-export const experience: Experience[] = [
-  {
-    company: 'Decision Automation',
-    role: 'Frontend Developer',
-    period: 'Mar 2023 - Jan 2025',
-    description:
-      'Building scalable, high-performance React applications using TypeScript, Zustand, and MUI. Implementing UI optimizations and improving state management for complex applications.',
-  },
-  {
-    company: 'Antstack Inc',
-    role: 'Frontend Developer',
-    period: 'Aug 2022 – Dec 2022',
-    description:
-      'Worked on cutting-edge web technologies, built custom React templates, and enhanced user experience for various SaaS products.',
-  },
-];
+// export const experience: Experience[] = [
+//   {
+//     company: 'Decision Automation',
+//     role: 'Frontend Developer',
+//     period: 'Mar 2023 - Jan 2025',
+//     description:
+//       'Building scalable, high-performance React applications using TypeScript, Zustand, and MUI. Implementing UI optimizations and improving state management for complex applications.',
+//   },
+//   {
+//     company: 'Antstack Inc',
+//     role: 'Frontend Developer',
+//     period: 'Aug 2022 – Dec 2022',
+//     description:
+//       'Worked on cutting-edge web technologies, built custom React templates, and enhanced user experience for various SaaS products.',
+//   },
+// ];
 
 export const collegeLife = {
   description1:
@@ -109,25 +109,25 @@ export const photography = {
     'But as time passed, especially around **my 3rd and 4th year of engineering**, my interest started shifting from photography to videography. Cinematography fascinated me—the way movements, lighting, and storytelling combined to create an impact. This transition felt natural, and I started exploring video editing, motion graphics, and short storytelling techniques.',
 };
 
-export const projects: Project[] = [
-  {
-    name: 'PowerBI-Portal / Share-My-Portal',
-    period: 'Feb 2024 - Dec 2024',
-    description:
-      'Led frontend development, built a scalable UI with React & TypeScript, optimized API calls, and implemented Microsoft row-level security for report security.',
-  },
-  {
-    name: 'ABEC Q-weld',
-    period: 'May 2024 – Dec 2024',
-    description:
-      'Delivered data visualization features, improved performance by 25%, and integrated custom Axios interceptors for faster API response.',
-  },
-  {
-    name: 'Irish Rollforming (IRF) App',
-    period: 'Oct 2023 - Jan 2024',
-    description: 'Developed a React Native tablet app for inventory management, material requests, and purchase orders.',
-  },
-];
+// export const projects: Project[] = [
+//   {
+//     name: 'PowerBI-Portal / Share-My-Portal',
+//     period: 'Feb 2024 - Dec 2024',
+//     description:
+//       'Led frontend development, built a scalable UI with React & TypeScript, optimized API calls, and implemented Microsoft row-level security for report security.',
+//   },
+//   {
+//     name: 'ABEC Q-weld',
+//     period: 'May 2024 – Dec 2024',
+//     description:
+//       'Delivered data visualization features, improved performance by 25%, and integrated custom Axios interceptors for faster API response.',
+//   },
+//   {
+//     name: 'Irish Rollforming (IRF) App',
+//     period: 'Oct 2023 - Jan 2024',
+//     description: 'Developed a React Native tablet app for inventory management, material requests, and purchase orders.',
+//   },
+// ];
 
 export const education: Education = {
   institution: 'Jawaharlal Nehru Engineering College',
