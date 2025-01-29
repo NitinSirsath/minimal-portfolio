@@ -50,7 +50,7 @@ export interface Languages {
 
 export const personalInfo = {
   name: 'Nitin Sirsath',
-  role: 'Frontend Developer | Motion Graphic Designer',
+  role: 'Frontend Developer',
   bio: 'Frontend Developer with 2 years of experience in building scalable applications using ReactJS, TypeScript, and modern UI frameworks. Passionate about design, development, and storytelling through visuals.',
   profileImage: myDP,
   contact: {

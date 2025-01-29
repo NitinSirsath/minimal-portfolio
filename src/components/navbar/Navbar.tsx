@@ -77,7 +77,7 @@ const Navbar = () => {
           </motion.div>
         </Typography>
         <Stack direction="row" spacing={2}>
-          {['Explore', 'Contact', 'About'].map(text => (
+          {['Explore', 'Experiences', 'About'].map(text => (
             <ListItem key={text} disablePadding className={globalStyle.ibmPlexMonoNormal}>
               <motion.div variants={linkVariants} whileHover="hover">
                 <Link
