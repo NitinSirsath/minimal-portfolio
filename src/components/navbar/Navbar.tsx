@@ -6,10 +6,14 @@ import CenterWrapper from '../wrappers/CenterWrapper';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import useThemeStore from '../../store/theme/themeStore';
+import { useMediaQuery } from '@mui/material';
 
 const Navbar = () => {
   const theme = useTheme(); // Access MUI theme
   const { darkMode, toggleDarkMode } = useThemeStore();
+
+  // Media Queries for Font & Spacing Adjustments
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm')); // Mobile screens
 
   // Animation variants
   const navbarVariants = {
@@ -48,11 +52,11 @@ const Navbar = () => {
         initial="hidden"
         animate="visible"
         style={{
-          marginTop: '20px',
+          marginTop: isMobile ? '10px' : '20px', // Smaller margin on mobile
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          padding: '10px 20px',
+          padding: isMobile ? '8px 15px' : '10px 20px', // Reduce padding for smaller screens
           background:
             theme.palette.mode === 'dark'
               ? 'rgba(33, 33, 33, 0.9)' // Dark mode background
@@ -63,20 +67,34 @@ const Navbar = () => {
           border: `1px solid ${theme.palette.divider}`, // Divider color from theme
         }}
       >
-        <Typography variant="h3" className={globalStyle.ibmPlexMonoNormal}>
+        {/* Logo */}
+        <Typography
+          variant={isMobile ? 'h5' : 'h3'} // Smaller font size for mobile
+          className={globalStyle.ibmPlexMonoNormal}
+          sx={{ flexGrow: isMobile ? 1 : 0 }}
+        >
           <motion.div variants={mainLogoVariant} whileHover="hover">
             <Link
               to="/"
               style={{
                 textDecoration: 'none',
                 color: theme.palette.text.primary, // Dynamically adjust text color
+                fontSize: isMobile ? '1.4rem' : '2rem', // Reduce size for small screens
               }}
             >
               ns
             </Link>
           </motion.div>
         </Typography>
-        <Stack direction="row" spacing={2}>
+
+        {/* Navigation Links */}
+        <Stack
+          direction="row"
+          spacing={isMobile ? 1 : 2} // Reduce spacing between links
+          sx={{
+            alignItems: 'center',
+          }}
+        >
           {['Explore', 'Experiences', 'About'].map(text => (
             <ListItem key={text} disablePadding className={globalStyle.ibmPlexMonoNormal}>
               <motion.div variants={linkVariants} whileHover="hover">
@@ -84,6 +102,7 @@ const Navbar = () => {
                   to={`/${text.toLowerCase()}`}
                   style={{
                     textDecoration: 'none',
+                    fontSize: isMobile ? '0.85rem' : '1rem', // Adjust font size dynamically
                     color: theme.palette.text.primary, // Dynamically adjust link color
                   }}
                 >
@@ -92,19 +111,13 @@ const Navbar = () => {
               </motion.div>
             </ListItem>
           ))}
-          {darkMode ? (
-            <Tooltip enterDelay={500} leaveDelay={300} title="Turn on light mode">
-              <IconButton onClick={handleThemeMode} color="inherit">
-                <DarkModeIcon />
-              </IconButton>
-            </Tooltip>
-          ) : (
-            <Tooltip enterDelay={500} leaveDelay={300} title="Turn on dark mode">
-              <IconButton onClick={handleThemeMode} color="inherit">
-                <LightModeIcon />
-              </IconButton>
-            </Tooltip>
-          )}
+
+          {/* Theme Toggle Button */}
+          <Tooltip enterDelay={500} leaveDelay={300} title={darkMode ? 'Turn on light mode' : 'Turn on dark mode'}>
+            <IconButton onClick={handleThemeMode} color="inherit" sx={{ fontSize: isMobile ? '1rem' : '1.2rem' }}>
+              {darkMode ? <DarkModeIcon fontSize="small" /> : <LightModeIcon fontSize="small" />}
+            </IconButton>
+          </Tooltip>
         </Stack>
       </motion.div>
     </CenterWrapper>
