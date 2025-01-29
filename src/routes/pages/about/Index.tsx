@@ -16,16 +16,16 @@ const AboutPage = () => {
   return (
     <CenterWrapper>
       {/* Profile Section */}
-      <Box textAlign="center" sx={{ mb: 4 }}>
+      <Box textAlign="left" sx={{ mb: 4 }}>
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <Avatar src={personalInfo.profileImage} sx={{ width: 120, height: 120, margin: '0 auto', mb: 2 }} />
-          <Typography variant="h3" sx={{ fontWeight: 'bold' }}>
+          <Typography variant="h3" sx={{ fontWeight: 'bold', color: '#FCD44C' }}>
             {personalInfo.name}
           </Typography>
           <Typography variant="h5" color="text.secondary">
             {personalInfo.role}
           </Typography>
-          <Typography variant="body1" sx={{ mt: 2, maxWidth: '600px', margin: '0 auto' }}>
+          <Typography variant="body2" color="textSecondary">
             {personalInfo.bio}
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
@@ -59,7 +59,7 @@ const AboutPage = () => {
         <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
           Photography Passion 📸
         </Typography>
-        <Box sx={{ padding: 2, borderRadius: 2 }}>
+        <Box>
           <Typography variant="body1">{photography.description}</Typography>
         </Box>
       </motion.div>
