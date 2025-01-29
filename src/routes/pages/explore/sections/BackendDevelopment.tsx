@@ -1,4 +1,4 @@
-import { Box, Typography, Divider, useTheme, Stack } from '@mui/material';
+import { Typography, Divider, useTheme } from '@mui/material';
 import { motion } from 'framer-motion';
 import CenterWrapper from '../../../../components/wrappers/CenterWrapper';
 
@@ -49,7 +49,7 @@ const BackendDevelopment = () => {
       </motion.div>
 
       {/* Tech Icons Section */}
-      <Stack direction="row" justifyContent="center" spacing={3} sx={{ mt: 3 }}>
+      {/* <Stack direction="row" justifyContent="center" spacing={3} sx={{ mt: 3 }}>
         <motion.div whileHover={{ scale: 1.2 }} transition={{ duration: 0.3 }}>
           <SiExpress size={30} color={theme.palette.text.primary} />
         </motion.div>
@@ -68,7 +68,7 @@ const BackendDevelopment = () => {
         <motion.div whileHover={{ scale: 1.2 }} transition={{ duration: 0.3 }}>
           <SiSupabase size={30} color={theme.palette.text.primary} />
         </motion.div>
-      </Stack>
+      </Stack> */}
 
       <Divider sx={{ my: 4 }} />
     </CenterWrapper>
