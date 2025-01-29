@@ -11,16 +11,16 @@ const ProfessionalJourney = () => {
       year: '2022',
       title: 'Started My Journey 🚀',
       description:
-        'Began my career as a Frontend Developer at Decision Automation, learning React, TypeScript, and scalable architectures.',
+        'Began my career as a Frontend Developer at Antstack Inc as Intern, learning React, TypeScript, and scalable architectures.',
     },
     {
-      year: '2023',
+      year: '2023/2024',
       title: 'Expanding My Expertise 📈',
       description:
-        'Worked on complex UI systems, optimized performance, and built scalable state management solutions with Zustand.',
+        'Started Dscission Automation journey. Worked on complex UI systems, optimized performance, and built scalable state management solutions with Zustand.',
     },
     {
-      year: '2024',
+      year: '2025',
       title: 'Future Aspirations 🌍',
       description:
         'Deep dive into Backend & Full-Stack Development, exploring AI-driven workflows, problem-solving at scale, and improving architectural skills.',
