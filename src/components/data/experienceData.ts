@@ -46,23 +46,23 @@ export const projects: Project[] = [
     period: 'Feb 2024 - Dec 2024',
     description:
       'Built a scalable UI with React & TypeScript, optimized API calls, and implemented Microsoft row-level security for report security.',
-    link: 'https://powerbi-portal.com', // Example Live Link
-    source: 'https://github.com/NitinSirsath/powerbi-portal',
+    link: 'https://portal.myreports.online/', // Example Live Link
+    // source: 'https://github.com/NitinSirsath/powerbi-portal',
   },
   {
     name: 'ABEC Q-weld',
     period: 'May 2024 – Dec 2024',
     description:
       'Developed data visualization features, improved performance by 25%, and integrated custom Axios interceptors.',
-    link: 'https://powerbi-portal.com', // Example Live Link
-    source: 'https://github.com/NitinSirsath/powerbi-portal',
+    link: 'https://abec.q-weld.com/', // Example Live Link
+    // source: 'https://github.com/NitinSirsath/powerbi-portal',
   },
   {
     name: 'Irish Rollforming (IRF) App',
     period: 'Oct 2023 - Jan 2024',
     description: 'Developed a React Native tablet app for inventory management and material requests.',
-    link: 'https://powerbi-portal.com', // Example Live Link
-    source: 'https://github.com/NitinSirsath/powerbi-portal',
+    link: 'https://www.irishrollforming.ie/', // Example Live Link
+    // source: 'https://github.com/NitinSirsath/powerbi-portal',
   },
 ];
 
