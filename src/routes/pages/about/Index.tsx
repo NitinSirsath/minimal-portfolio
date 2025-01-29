@@ -229,7 +229,7 @@ const AboutPage = () => {
         ))}
       </Box> */}
 
-      <Divider sx={{ my: 4 }} />
+      {/* <Divider sx={{ my: 4 }} /> */}
 
       {/* Languages Section */}
       <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
