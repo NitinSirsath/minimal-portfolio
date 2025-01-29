@@ -11,11 +11,29 @@ const Footer = () => {
       transition: { duration: 0.3 },
     },
   };
+
   return (
     <CenterWrapper>
       <Divider />
-      <div className="py-11" style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Typography variant="subtitle1">&copy; 2022 - 2024 / Nitin Sirsath</Typography>
+      <div
+        className="py-11"
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          // flexDirection: 'column',
+          textAlign: 'center',
+          padding: '20px 0px',
+          gap: '10px',
+        }}
+      >
+        <Typography
+          variant="body2" // Smaller font size for better mobile readability
+          sx={{ fontSize: { xs: '12px', sm: '14px', md: '16px' } }}
+        >
+          &copy; 2022 - 2024 / Nitin Sirsath
+        </Typography>
+
         <motion.div variants={linkVariants} whileHover="hover">
           <Link
             href="https://github.com/NitinSirsath/minimal-portfolio"
@@ -24,6 +42,7 @@ const Footer = () => {
             sx={{
               color: theme.palette.primary.main,
               textDecoration: 'none',
+              fontSize: { xs: '12px', sm: '14px', md: '16px' }, // Adjust font size for mobile
             }}
           >
             <Typography variant="body2" color="textSecondary">
