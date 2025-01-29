@@ -1,19 +1,20 @@
-import { Box, Typography, Divider, Avatar, Chip, Stack, Tooltip, IconButton } from '@mui/material';
+import { Box, Typography, Divider, Avatar, Chip, Stack, Tooltip, IconButton, CircularProgress, Paper } from '@mui/material';
 import { motion } from 'framer-motion';
 import CenterWrapper from '../../../components/wrappers/CenterWrapper';
 import { personalInfo, skills, tools, languages, collegeLife, photography } from '../../../components/data/about';
 import {
-  Call as CallIcon,
-  PinDrop as PinDropIcon,
-  ContactMail as ContactMailIcon,
-  PermIdentity as PermIdentityIcon,
   YouTube as YouTubeIcon,
   LinkedIn as LinkedInIcon,
   Instagram as InstagramIcon,
   X as XIcon,
 } from '@mui/icons-material';
+import gif1 from '../../../assets/arya.webp';
+import gif2 from '../../../assets/class.webp';
+import { useState } from 'react';
 
 const AboutPage = () => {
+  const [gif1Loaded, setGif1Loaded] = useState(false);
+  const [gif2Loaded, setGif2Loaded] = useState(false);
   return (
     <CenterWrapper>
       {/* Profile Section */}
@@ -114,6 +115,51 @@ const AboutPage = () => {
         <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
           College Life 🎓
         </Typography>
+        <Stack direction="row" spacing={2} sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
+          <Paper
+            elevation={3}
+            sx={{
+              overflow: 'hidden',
+              borderRadius: 2,
+              width: 250,
+              height: 200,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            {!gif1Loaded && <CircularProgress />}
+            <img
+              src={gif1}
+              alt="College Memories 1"
+              loading="lazy"
+              style={{ display: gif1Loaded ? 'block' : 'none', width: '100%', height: '100%', objectFit: 'cover' }}
+              onLoad={() => setGif1Loaded(true)}
+            />
+          </Paper>
+
+          <Paper
+            elevation={3}
+            sx={{
+              overflow: 'hidden',
+              borderRadius: 2,
+              width: 250,
+              height: 200,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            {!gif2Loaded && <CircularProgress />}
+            <img
+              src={gif2}
+              alt="College Memories 2"
+              loading="lazy"
+              style={{ display: gif2Loaded ? 'block' : 'none', width: '100%', height: '100%', objectFit: 'cover' }}
+              onLoad={() => setGif2Loaded(true)}
+            />
+          </Paper>
+        </Stack>
         <Box>
           {Object.values(collegeLife).map((paragraph, index) => (
             <Typography key={index} variant="body1" sx={{ mb: 2 }}>
