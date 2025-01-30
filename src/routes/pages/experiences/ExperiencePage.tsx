@@ -1,4 +1,4 @@
-import { Box, Typography, Divider, Button, Stack, Link, Chip, useTheme } from '@mui/material';
+import { Box, Typography, Divider, Button, Stack, Link, Chip } from '@mui/material';
 import { motion } from 'framer-motion';
 import CenterWrapper from '../../../components/wrappers/CenterWrapper';
 import { Experience, experience, personalProjects, projects } from '../../../components/data/experienceData';
@@ -7,7 +7,6 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import { skills, tools } from '../../../components/data/about';
 
 const ExperiencePage = () => {
-  const theme = useTheme();
   return (
     <CenterWrapper widthPercentage={50}>
       {/* Work Experience Section */}
