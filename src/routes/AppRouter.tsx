@@ -19,7 +19,6 @@ const AppRouter = () => {
           <Route path="/about" index element={<AboutPage />} />
           <Route path="/explore" index element={<ExplorePage />} />
           <Route path="/experience" index element={<ExperiencePage />} />
-          {/* <Route path="/blogs/:id" element={<RenderBlog />} /> */}
           <Route path="/blogs/1" element={<Blog1 />} />
           <Route path="/*" element={<NotFoundPage />} />
         </Routes>
