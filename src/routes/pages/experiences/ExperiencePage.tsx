@@ -128,6 +128,7 @@ const ExperiencePage = () => {
           ))}
         </Stack>
       </motion.div>
+      <Divider sx={{ my: 4 }} />
       <Box marginTop={2}>
         <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
           Skills & Tools
