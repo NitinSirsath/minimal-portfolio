@@ -40,7 +40,7 @@ const CollegeLife = () => {
               backgroundColor: '#F4F4F4',
             }}
           >
-            {!gif1Loaded && <CircularProgress />}
+            {!gif1Loaded && <CircularProgress color="warning" />}
             <img
               src={gif1}
               alt="College Memories 1"
@@ -70,7 +70,7 @@ const CollegeLife = () => {
               backgroundColor: '#F4F4F4',
             }}
           >
-            {!gif2Loaded && <CircularProgress />}
+            {!gif2Loaded && <CircularProgress color="warning" />}
             <img
               src={gif2}
               alt="College Memories 2"
