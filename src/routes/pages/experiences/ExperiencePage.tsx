@@ -3,19 +3,22 @@ import CenterWrapper from '../../../components/wrappers/CenterWrapper';
 import ProfessionalExp from './sections/ProfessionalExp';
 import SkillsExp from './sections/SkillsExp';
 import PersonalExp from './sections/PersonalExp';
+import SectionWrapper from '../../../components/animations/SectionWrapper';
 
 const ExperiencePage = () => {
   return (
-    <CenterWrapper widthPercentage={50}>
-      {/* Work Experience Section */}
-
-      <ProfessionalExp />
+    <CenterWrapper>
+      <SectionWrapper>
+        <ProfessionalExp />
+      </SectionWrapper>
       <Divider sx={{ my: 4 }} />
-      <PersonalExp />
-      {/* Personal Projects Section */}
-
+      <SectionWrapper>
+        <PersonalExp />
+      </SectionWrapper>
       <Divider sx={{ my: 4 }} />
-      <SkillsExp />
+      <SectionWrapper>
+        <SkillsExp />
+      </SectionWrapper>
     </CenterWrapper>
   );
 };
