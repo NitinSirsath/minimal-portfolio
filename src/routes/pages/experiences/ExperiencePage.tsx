@@ -1,4 +1,4 @@
-import { Box, Typography, Divider, Button, Stack, Link, Chip } from '@mui/material';
+import { Box, Typography, Divider, Button, Stack, Link, Chip, useTheme } from '@mui/material';
 import { motion } from 'framer-motion';
 import CenterWrapper from '../../../components/wrappers/CenterWrapper';
 import { Experience, experience, personalProjects, projects } from '../../../components/data/experienceData';
@@ -7,6 +7,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import { skills, tools } from '../../../components/data/about';
 
 const ExperiencePage = () => {
+  const theme = useTheme();
   return (
     <CenterWrapper widthPercentage={50}>
       {/* Work Experience Section */}
@@ -17,7 +18,7 @@ const ExperiencePage = () => {
         <Stack spacing={4}>
           {experience.map((exp: Experience, index) => (
             <motion.div transition={{ duration: 0.3 }} key={index}>
-              <Box sx={{ p: 2, borderLeft: '3px solid #FCD44C' }}>
+              <Box sx={{ p: 2, borderLeft: '2px solid #FCD44C' }}>
                 <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                   {exp.company}
                 </Typography>
@@ -35,7 +36,7 @@ const ExperiencePage = () => {
                       Projects at {exp.company}
                     </Typography>
                     {projects.map((project, idx) => (
-                      <Box key={idx} sx={{ mt: 2, pl: 2, borderLeft: '2px solid #FCD44C' }}>
+                      <Box key={idx} sx={{ mt: 2, pl: 2, borderLeft: '1px solid #565656' }}>
                         <Typography variant="h6">{project.name}</Typography>
                         <Typography variant="caption" color="text.secondary">
                           {project.period}
