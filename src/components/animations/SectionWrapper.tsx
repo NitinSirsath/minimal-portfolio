@@ -10,7 +10,7 @@ const SectionWrapper = ({ children }: { children: React.ReactNode }) => {
       ref={ref}
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 1.3 }}
       style={{ marginBottom: '80px' }} // Spacing between sections
     >
       {children}
