@@ -89,7 +89,7 @@ const ExperiencePage = () => {
         <Stack spacing={4}>
           {personalProjects.map((project, index) => (
             <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }} key={index}>
-              <Box sx={{ p: 2, borderLeft: '3px solid #FCD44C' }}>
+              <Box sx={{ p: 2, borderLeft: '2px solid #FCD44C' }}>
                 <Typography variant="h6">{project.name}</Typography>
                 <Typography variant="caption" color="text.secondary">
                   {project.period}
