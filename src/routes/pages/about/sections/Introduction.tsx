@@ -17,7 +17,10 @@ const Introduction = () => {
           whileTap={{ scale: 0.9, rotate: -10 }}
           transition={{ type: 'spring', stiffness: 200 }}
         >
-          <Avatar src={personalInfo.profileImage} sx={{ width: 200, height: 200, mb: 2, border: '4px solid #FCD44C' }} />
+          <Avatar
+            src={personalInfo.profileImage}
+            sx={{ width: 200, height: 200, mb: 2, border: '4px solid #FCD44C', bgcolor: '#B71C1C' }}
+          />
         </motion.div>
         <Typography variant="h3" sx={{ fontWeight: 'bold', color: '#FCD44C' }}>
           {personalInfo.name}
