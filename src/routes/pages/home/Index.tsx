@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'; // Import Framer Motion
 import ProjectSection from './components/ProjectSection';
 import RecentWriting from './components/writing/RecentWriting';
 import CenterWrapper from '../../../components/wrappers/CenterWrapper';
+import { useNavigate } from 'react-router-dom';
 
 const textVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -19,6 +20,10 @@ const textVariants = {
 };
 
 const HomePage = () => {
+  const navigate = useNavigate();
+  const handleNavigation = () => {
+    navigate('/about');
+  };
   return (
     <div>
       <CenterWrapper>
@@ -43,17 +48,21 @@ const HomePage = () => {
             </Typography>
           </motion.div>
           <motion.div initial="hidden" animate="visible" variants={textVariants} custom={3}>
-            <Button endIcon={<ArrowForwardRounded />} variant="contained">
+            <Button onClick={handleNavigation} endIcon={<ArrowForwardRounded />} variant="contained">
               More Information
             </Button>
           </motion.div>
         </div>
       </CenterWrapper>
-      <Divider />
+      <CenterWrapper>
+        <Divider sx={{ my: 4 }} />
+      </CenterWrapper>
       <div className="mt-4">
         <ProjectSection />
       </div>
-      <Divider />
+      <CenterWrapper>
+        <Divider sx={{ my: 4 }} />
+      </CenterWrapper>
       <div className="mt-4">
         <RecentWriting />
       </div>
