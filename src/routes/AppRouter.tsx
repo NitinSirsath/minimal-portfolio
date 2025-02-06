@@ -9,11 +9,15 @@ import AboutPage from './pages/about/Index';
 import ExperiencePage from './pages/experiences/ExperiencePage';
 import ExplorePage from './pages/explore/ExplorePage';
 import ScrollToTop from '../utils/ScrollToTop';
+import useStartStore from '../store/startUpMessageStore';
+import StartUpAlert from '../components/alert/StartUpAlert';
 
 const AppRouter = () => {
+  const { getStartMessage } = useStartStore();
   return (
     <Paper>
       <AppLayout>
+        {getStartMessage && <StartUpAlert />}
         <ScrollToTop />
         <Routes>
           <Route path="/" index element={<HomePage />} />
