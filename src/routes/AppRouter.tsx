@@ -8,11 +8,13 @@ import Blog1 from './pages/blogs/BlogPage/Blog1';
 import AboutPage from './pages/about/Index';
 import ExperiencePage from './pages/experiences/ExperiencePage';
 import ExplorePage from './pages/explore/ExplorePage';
+import ScrollToTop from '../utils/ScrollToTop';
 
 const AppRouter = () => {
   return (
     <Paper>
       <AppLayout>
+        <ScrollToTop />
         <Routes>
           <Route path="/" index element={<HomePage />} />
           <Route path="/blogs" index element={<BlogPage />} />
