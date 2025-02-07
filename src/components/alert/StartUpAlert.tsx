@@ -21,7 +21,7 @@ export default function StartUpAlert() {
   const horizontal = 'center';
 
   return (
-    <Snackbar anchorOrigin={{ vertical, horizontal }} open={open} autoHideDuration={6000} onClose={handleClose}>
+    <Snackbar anchorOrigin={{ vertical, horizontal }} open={open} autoHideDuration={10000} onClose={handleClose}>
       <Alert
         onClose={handleClose}
         icon={<QuestionAnswer fontSize="inherit" />}
