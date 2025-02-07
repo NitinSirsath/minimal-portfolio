@@ -2,16 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 
 html, body {
   overflow-x: hidden;
   max-width: 100%;
   touch-action: pan-x pan-y;
+}
+
+/* Slow down scrolling effect */
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+/* ::-webkit-scrollbar {
+  width: 8px;
+} */
+
+/* ::-webkit-scrollbar-track {
+  background: transparent;
+} */
+
+/* ::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.5);
+  border-radius: 8px;
+} */
+
+/* Make scroll feel slower */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 

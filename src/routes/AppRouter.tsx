@@ -8,18 +8,23 @@ import Blog1 from './pages/blogs/BlogPage/Blog1';
 import AboutPage from './pages/about/Index';
 import ExperiencePage from './pages/experiences/ExperiencePage';
 import ExplorePage from './pages/explore/ExplorePage';
+import ScrollToTop from '../utils/ScrollToTop';
+import useStartStore from '../store/startUpMessageStore';
+import StartUpAlert from '../components/alert/StartUpAlert';
 
 const AppRouter = () => {
+  const { getStartMessage } = useStartStore();
   return (
     <Paper>
       <AppLayout>
+        {getStartMessage && <StartUpAlert />}
+        <ScrollToTop />
         <Routes>
           <Route path="/" index element={<HomePage />} />
           <Route path="/blogs" index element={<BlogPage />} />
           <Route path="/about" index element={<AboutPage />} />
           <Route path="/explore" index element={<ExplorePage />} />
-          <Route path="/experiences" index element={<ExperiencePage />} />
-          {/* <Route path="/blogs/:id" element={<RenderBlog />} /> */}
+          <Route path="/experience" index element={<ExperiencePage />} />
           <Route path="/blogs/1" element={<Blog1 />} />
           <Route path="/*" element={<NotFoundPage />} />
         </Routes>

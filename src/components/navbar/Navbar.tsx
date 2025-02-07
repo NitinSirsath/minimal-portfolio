@@ -95,18 +95,18 @@ const Navbar = () => {
             alignItems: 'center',
           }}
         >
-          {['Explore', 'Experiences', 'About'].map(text => (
+          {['Explore', 'Experience', 'About'].map(text => (
             <ListItem key={text} disablePadding className={globalStyle.ibmPlexMonoNormal}>
               <motion.div variants={linkVariants} whileHover="hover">
                 <Link
                   to={`/${text.toLowerCase()}`}
                   style={{
                     textDecoration: 'none',
-                    fontSize: isMobile ? '0.85rem' : '1rem', // Adjust font size dynamically
+                    fontSize: isMobile ? '0.8rem' : '1rem', // Adjust font size dynamically
                     color: theme.palette.text.primary, // Dynamically adjust link color
                   }}
                 >
-                  {text}
+                  {isMobile ? (text === 'Experience' ? 'Exp.' : text) : text}
                 </Link>
               </motion.div>
             </ListItem>
