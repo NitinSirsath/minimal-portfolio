@@ -26,16 +26,23 @@ export const experience: Experience[] = [
   {
     company: 'Decision Automation',
     role: 'Frontend Developer',
-    period: '2022 - Present',
+    period: 'Mar 2023 - Jan 2025',
     description:
       'Building scalable React applications, optimizing UI/UX, and enhancing data visualization for high-traffic platforms.',
   },
   {
     company: 'Antstack Inc',
-    role: 'Frontend Developer Intern',
-    period: 'Aug 2022 – Dec 2022',
+    role: 'Frontend Developer',
+    period: 'April 2022 – Jan 2023',
     description:
       'Worked on the Stackw3 project, creating custom templates (Astro-Strapi, React Query, Next Hover) and building a user-friendly interface for seamless template generation and cloning to GitHub. Utilized React.js with TypeScript, MUI, Styled Components, and Framer Motion for dynamic UI. Deployed on AWS for scalability and reliability.',
+  },
+{
+    company: 'Ajna Tech',
+    role: 'Frontend Developer',
+    period: 'Jan 2022 – April 2022',
+    description:
+      'Worked on the RPA (Robot Process Automation) products , developed UI components building a user-friendly interface and web designing using Figma. Utilized React.js with TypeScript, MUI, Styled Components, and Framer Motion for dynamic UI.',
   },
 ];
 
