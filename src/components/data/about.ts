@@ -51,7 +51,7 @@ export interface Languages {
 export const personalInfo = {
   name: 'Nitin Sirsath',
   role: 'Fullstack Engineer',
-  bio: 'Fullstack Developer with 2 years of experience in building scalable applications using ReactJS, TypeScript, and modern UI frameworks. Passionate about design, development, and storytelling through visuals.',
+  bio: 'Fullstack Developer with 3 years of experience in building scalable applications using ReactJS, TypeScript, and modern UI frameworks. Passionate about design, development, and storytelling through visuals.',
   profileImage: myDP,
   contact: {
     email: 'nitinsirsath8855@gmail.com',
